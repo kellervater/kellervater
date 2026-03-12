@@ -28,16 +28,17 @@ Also built **[scadm](https://github.com/kellerlabs/homeracker/tree/main/cmd/scad
 ### 🛠️ Tech I work with
 
 ```
-Cloud        GCP · AWS · Azure · Hetzner
-Kubernetes   GKE · EKS · Rancher · bare-metal
-IaC          Terraform · Pulumi (Go) · Kustomize · Ansible
-GitOps       ArgoCD · FluxCD
-CI/CD        GitHub Actions · Jenkins · Gitlab
-Security     Teleport · Vault · WireGuard · Okta · Yubikeys (GPG)
-Monitoring   Prometheus · Grafana · OpenTelemetry · Elasticsearch · Opensearch
-Languages    Go · Java · TypeScript · Python · Shell · Rust (early stage)
-Databases    PostgreSQL · MySQL · MongoDB · Neo4j · Redis
-3D/CAD       OpenSCAD · Fusion 360
+Cloud          GCP · AWS · Azure · Hetzner
+Kubernetes     GKE · EKS · Rancher · bare-metal
+IaC            Terraform · Pulumi (Go) · Kustomize · Ansible
+GitOps         ArgoCD · FluxCD
+CI/CD          GitHub Actions · Jenkins · Gitlab
+Security       Teleport · Vault · WireGuard · Okta · Yubikeys (GPG)
+Monitoring     Prometheus · Grafana · OpenTelemetry · Elasticsearch · Opensearch
+Languages      Go · Java · TypeScript · Python · Shell · Rust (early stage)
+Databases      PostgreSQL · MySQL · MongoDB · Neo4j · Redis
+3D/CAD         OpenSCAD · Fusion 360
+Coding Agents  GitHub Copilot · Claude Opus 4.6 (preferred)
 ```
 
 ### 📄 [Full Resume →](RESUME.md)

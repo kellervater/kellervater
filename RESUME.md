@@ -9,7 +9,7 @@ Pöllau, Styria, Austria (Remote - EU)
 
 ## Summary
 
-Platform engineer with 16 years of experience, starting as a Java developer building financial systems and evolving into an infrastructure architect. I build software to make other engineers more productive - owning developer platforms, CI/CD infrastructure, Kubernetes clusters, and cross-team platform services at scale. I think like a programmer when solving infrastructure problems: I write reusable frameworks, design self-service abstractions, and ship end-to-end with minimal to no oversight.
+Platform engineer with 16 years of experience, starting as a Java developer building financial systems and evolving into an infrastructure architect. I build software to make other engineers more productive - owning developer platforms, CI/CD infrastructure, Kubernetes clusters, and cross-team platform services at scale. I think like a programmer when solving infrastructure problems: I write reusable frameworks, design self-service abstractions, and ship end-to-end with minimal to no oversight. Over the past year I've become highly proficient with AI coding agents — maintaining a deliberate balance between staying current with the latest model developments and squeezing real day-to-day efficiency out of them (preferred model: Claude Opus 4.6).
 
 ---
 
@@ -84,7 +84,7 @@ Junior programmer in the financial sector: COBOL, JCL, DB2, then **Java, GWT, Po
 | **Observability** | Prometheus, Grafana, Alertmanager, Elastic Stack, OpenCost |
 | **Databases** | PostgreSQL, MySQL, MongoDB, Neo4j, Redis, Oracle, MSSQL |
 | **Registries** | Harbor, GAR, DockerHub |
-| **Coding Agents** | Github Copilot (preferred Model: Claude Opus 4.6 |
+| **Coding Agents** | GitHub Copilot (preferred model: Claude Opus 4.6) — highly proficient; actively tracks new model developments to maintain peak efficiency |
 
 ---
 
