@@ -1,16 +1,47 @@
-## Hi there 👋
+# Hi, I'm Patrick 👋
 
-<!--
-**kellervater/kellervater** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
+**Senior Software Engineer, Infrastructure** @ [Camunda](https://camunda.com)
+📍 Austria · 🌐 Remote
 
-Here are some ideas to get you started:
+I'm a platform engineer with a programming background. I started as a Java developer building financial systems, then deliberately moved deeper into the infrastructure stack — from application code to CI/CD pipelines, to containerizing microservices, to building entire Kubernetes platforms from bare metal up. Today I build software to make other engineers more productive.
 
-- 🔭 I’m currently working on ...
-- 🌱 I’m currently learning ...
-- 👯 I’m looking to collaborate on ...
-- 🤔 I’m looking for help with ...
-- 💬 Ask me about ...
-- 📫 How to reach me: ...
-- 😄 Pronouns: ...
-- ⚡ Fun fact: ...
--->
+### 🔧 What I do at work
+Owner of Camunda's developer platform serving 100+ engineers across 10+ product teams — CI/CD infrastructure (GitHub Actions self-hosted runners on EKS), Kubernetes clusters (GKE + EKS), container registries (Harbor), dependency management (Renovate), monitoring, and cross-team platform services.
+
+### 🏗️ What I build for fun
+
+#### [HomeRacker](https://github.com/kellerlabs/homeracker) — *A fully modular 3D-printable rack-building system*
+
+[![Stars](https://img.shields.io/github/stars/kellerlabs/homeracker?style=flat&logo=github)](https://github.com/kellerlabs/homeracker)
+[![Forks](https://img.shields.io/github/forks/kellerlabs/homeracker?style=flat&logo=github)](https://github.com/kellerlabs/homeracker/network/members)
+[![Website](https://img.shields.io/badge/web-homeracker.org-blue)](https://homeracker.org/)
+[![Discord](https://img.shields.io/badge/chat-Discord-7289da?logo=discord&logoColor=white)](https://discord.gg/b6myzHRxc3)
+
+I created HomeRacker because I was dissatisfied with existing 3D-printable rack solutions — too specific, too rigid, too many adapters. HomeRacker is a fully parametric, open-spec system that can build anything from a Raspberry Pi mini-rack to a 10"/19" server rack to a bookshelf. No supports needed, no tools required for assembly.
+
+- 🎥 [YouTube — Build Guides & Tutorials](https://www.youtube.com/@kellerlabs)
+- 🖨️ [Makerworld — Ready-to-Print Models](https://makerworld.com/@kellerlab)
+- 🐙 [Community Repo — Extensions & Modules](https://github.com/kellerlabs/homeracker-community)
+
+Also built **[scadm](https://github.com/kellerlabs/homeracker/tree/main/cmd/scadm)** — a zero-dependency Python package manager for OpenSCAD libraries. `pip install scadm`
+
+### 🛠️ Tech I work with
+
+```
+Cloud        GCP · AWS · Azure
+Kubernetes   GKE · EKS · Rancher · bare-metal
+IaC          Terraform · Pulumi (Go) · Kustomize · Ansible
+GitOps       ArgoCD · FluxCD
+CI/CD        GitHub Actions · Jenkins
+Security     Teleport · Vault · WireGuard · Okta
+Monitoring   Prometheus · Grafana · OpenTelemetry
+Languages    Go · Java · TypeScript · Python · Rust · Shell
+Databases    PostgreSQL · MySQL · MongoDB · Neo4j · Redis
+3D/CAD       OpenSCAD · Fusion 360
+```
+
+### 📄 [Full Resume →](RESUME.md)
+
+### 📫 Get in touch
+- 💼 [LinkedIn](https://www.linkedin.com/in/patrickpoetz)
+- 📧 kellervater@gmail.com
