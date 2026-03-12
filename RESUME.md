@@ -84,6 +84,7 @@ Junior programmer in the financial sector: COBOL, JCL, DB2, then **Java, GWT, Po
 | **Observability** | Prometheus, Grafana, Alertmanager, Elastic Stack, OpenCost |
 | **Databases** | PostgreSQL, MySQL, MongoDB, Neo4j, Redis, Oracle, MSSQL |
 | **Registries** | Harbor, GAR, DockerHub |
+| **Coding Agents** | Github Copilot (preferred Model: Claude Opus 4.6 |
 
 ---
 
