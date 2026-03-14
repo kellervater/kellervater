@@ -46,7 +46,7 @@ Designed and built the entire infrastructure platform for automated warehouses r
 ### VOO Aviation Service GmbH - DevOps Architect
 **January 2022 – April 2023** (1 year 4 months) · Hybrid (Graz), Austria
 
-Designed and built a fully cloud-agnostic Kubernetes infrastructure on top of bare-metal hardware and cloud VMs. Owned the full stack: Netmaker/WireGuard for multi-cloud networking, Rancher Kubernetes Engine, Ansible provisioning, FluxCD for GitOps, SOPS for secrets, Stackgres (Postgres), MongoDB, Neo4J, OpenEBS storage, and Prometheus/Grafana observability. Designed and maintained the entire CI/CD system and pipelines (Gitlab) which also ran onprem.
+Designed and built a fully cloud-agnostic Kubernetes infrastructure on top of bare-metal hardware and cloud VMs. Owned the full stack: Netmaker/WireGuard for multi-cloud networking, Rancher Kubernetes Engine, Ansible provisioning, FluxCD for GitOps, SOPS for secrets, Stackgres (Postgres), MongoDB, Neo4J, OpenEBS storage, and Prometheus/Grafana observability. Designed and maintained the entire CI/CD system and pipelines (Gitlab) which also ran onprem. Created disaster recovery plans and regular drills on prod-like environments.
 
 ### Reactive Reality - Site Reliability Engineer
 **January 2021 – December 2021** (1 year) · Hybrid (Graz), Austria
@@ -76,7 +76,7 @@ Junior programmer in the financial sector: COBOL, JCL, DB2, then **Java, GWT, Po
 |---|---|
 | **Languages** | Go, Java, TypeScript, Python, .NET, Shell |
 | **Cloud** | GCP (GKE, IAM, VPC, GAR, etc), AWS (EKS, ECS, Aurora, OpenSearch, etc), Azure |
-| **Kubernetes** | GKE, EKS, Rancher, bare-metal - RBAC, autoscaling, node pools, Helm |
+| **Kubernetes** | GKE, EKS, Rancher, bare-metal, autoscaling, node pools, Helm |
 | **IaC** | Terraform, Pulumi (Go), Kustomize, Ansible |
 | **GitOps** | ArgoCD, FluxCD |
 | **CI/CD** | GitHub Actions (ARC self-hosted runners), Jenkins, Azure DevOps, Gitlab |
