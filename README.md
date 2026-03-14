@@ -8,6 +8,8 @@ I'm a platform engineer with a programming background. I started as a Java devel
 ### 🔧 What I do at work
 Owner of Camunda's developer platform serving 100+ engineers across 10+ product teams — CI/CD infrastructure (GitHub Actions self-hosted runners on EKS, preview environments via Github Labels), Kubernetes clusters (GKE + EKS), container registries (Harbor), dependency management (Renovate), monitoring, and cross-team platform services.
 
+### 📄 [Full Resume →](RESUME.md)
+
 ### 🏗️ What I build for fun
 
 #### [HomeRacker](https://github.com/kellerlabs/homeracker) — *A fully modular 3D-printable rack-building system*
@@ -40,8 +42,6 @@ Databases      PostgreSQL · MySQL · MongoDB · Neo4j · Redis
 3D/CAD         OpenSCAD · Fusion 360
 Coding Agents  GitHub Copilot · Claude Opus 4.6 (preferred)
 ```
-
-### 📄 [Full Resume →](RESUME.md)
 
 ### 📫 Get in touch
 - 💼 [LinkedIn](https://www.linkedin.com/in/patrickpoetz)
