@@ -29,7 +29,7 @@ Owner of Camunda's developer platform serving 100+ engineers across 10+ product 
 - **Became the Renovate platform owner** for engineering - self-hosted Renovate for the monorepo, designed sensitive-dependency patterns, and prevented production outages from faulty transitive dependencies.
 - **Built reusable CI frameworks**: smoke test system for automated Kustomize component upgrades, AI Commit Guard GitHub Action (adopted in monorepo), ChatOps automation for team workflow management.
 - **Mentoring engineers** on infrastructure best practices including async workflows, security, containerization, and Kubernetes operations.
-- **Leading and participating in hiring interviews** for new domain colleagues, including reviewing take-home tests, conducting whiteboard sessions, and facilitating peer reviews.
+- **Leading and participating in hiring interviews** for new domain colleagues, including reviewing take-home tests, conducting whiteboard sessions, and facilitating peer interviews.
 
 ### advastore SE - Platform Engineer
 **April 2023 – May 2024** (1 year 2 months) · Remote
