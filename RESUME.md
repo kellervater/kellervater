@@ -9,7 +9,7 @@ Pöllau, Styria, Austria (Remote - EU)
 
 ## Summary
 
-Platform engineer with 16 years of experience, starting as a Java developer building financial systems and evolving into an infrastructure architect. I build software to make other engineers more productive - owning developer platforms, CI/CD infrastructure, Kubernetes clusters, and cross-team platform services at scale. I think like a programmer when solving infrastructure problems: I write reusable frameworks, design self-service abstractions, and ship end-to-end with minimal to no oversight. Over the past year I've become highly proficient with AI coding agents — maintaining a deliberate balance between staying current with the latest model developments and squeezing real day-to-day efficiency out of them (preferred model: Claude Opus 4.6).
+Platform engineer with 16 years of experience, starting as a Java developer building financial systems and evolving into an infrastructure architect. I build software to make other engineers more productive - owning developer platforms, CI/CD infrastructure, Kubernetes clusters, and cross-team platform services at scale. I think like a programmer when solving infrastructure problems: I write reusable frameworks, design self-service abstractions, and ship end-to-end with minimal to no oversight. Over the past year I've become highly proficient with AI coding agents — maintaining a deliberate balance between staying current with the latest model developments and squeezing real day-to-day efficiency out of them (preferred model: Claude Opus 4.6). Highly efficient in async work (established since the 2020 Covid shift) and an evangelist for an async-first workstyle—prioritizing group chats over DMs and respecting each other's time ("let's hop on a quick chat" are absolute exceptions reserved for incidents).
 
 ---
 
@@ -29,6 +29,7 @@ Owner of Camunda's developer platform serving 100+ engineers across 10+ product 
 - **Became the Renovate platform owner** for engineering - self-hosted Renovate for the monorepo, designed sensitive-dependency patterns, and prevented production outages from faulty transitive dependencies.
 - **Built reusable CI frameworks**: smoke test system for automated Kustomize component upgrades, AI Commit Guard GitHub Action (adopted in monorepo), ChatOps automation for team workflow management.
 - **Mentoring engineers** on infrastructure best practices including async workflows, security, containerization, and Kubernetes operations.
+- **Leading and participating in hiring interviews** for new domain colleagues, including reviewing take-home tests, conducting whiteboard sessions, and facilitating peer reviews.
 
 ### advastore SE - Platform Engineer
 **April 2023 – May 2024** (1 year 2 months) · Remote

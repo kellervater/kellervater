@@ -5,6 +5,8 @@
 
 I'm a platform engineer with a programming background. I started as a Java developer building tools in the financial sector, then deliberately moved deeper into the infrastructure stack — from application code to CI/CD pipelines, to containerizing microservices, to building entire Kubernetes platforms from bare metal up. Today I build software to make other engineers more productive.
 
+I am a strong advocate for an **async-first workstyle** (since the 2020 shift), valuing deep work, transparent group communication, and respecting others' time over synchronous interruptions.
+
 ### 🔧 What I do at work
 Owner of Camunda's developer platform serving 100+ engineers across 10+ product teams — CI/CD infrastructure (GitHub Actions self-hosted runners on EKS, preview environments via Github Labels), Kubernetes clusters (GKE + EKS), container registries (Harbor), dependency management (Renovate), monitoring, and cross-team platform services.
 
