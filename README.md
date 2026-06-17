@@ -3,12 +3,22 @@
 **Senior Software Engineer, Infrastructure** @ [Camunda](https://camunda.com)
 📍 Austria · 🌐 Remote
 
-I'm a platform engineer with a programming background. I started as a Java developer building tools in the financial sector, then deliberately moved deeper into the infrastructure stack — from application code to CI/CD pipelines, to containerizing microservices, to building entire Kubernetes platforms from bare metal up. Today I build software to make other engineers more productive.
+_I build the platform, automation, and guardrails that make 100+ engineers faster — and increasingly set the technical direction behind them._
+
+I'm a platform engineer with a programming background. I started as a Java developer building tools in the financial sector, then deliberately moved deeper into the infrastructure stack — from application code to CI/CD pipelines, to containerizing microservices, to building entire Kubernetes platforms from bare metal up. Today I think like a programmer when solving infrastructure problems: I write reusable frameworks, design self-service abstractions, and ship end-to-end with minimal oversight — so the leverage lands on the whole organization, not just my own tickets.
 
 I am a strong advocate for an **async-first workstyle** (since the 2020 shift), valuing deep work, transparent group communication, and respecting others' time over synchronous interruptions.
 
 ### 🔧 What I do at work
-Owner of Camunda's developer platform serving 100+ engineers across 10+ product teams — CI/CD infrastructure (GitHub Actions self-hosted runners on EKS, preview environments via Github Labels), Kubernetes clusters (GKE + EKS), container registries (Harbor), dependency management (Renovate), monitoring, and cross-team platform services.
+I own Camunda's developer platform serving **100+ engineers across 10+ product teams** — CI/CD infrastructure (GitHub Actions self-hosted runners on EKS, label-driven preview environments), Kubernetes clusters (GKE + EKS), container registries (Harbor), dependency management (Renovate), monitoring, secret management (Vault), and cross-team platform services. Beyond keeping it running, I set direction for where it goes next — a scope that's grown from onboarding individual teams to owning org-wide operations and leading cross-team initiatives.
+
+### ⭐ Selected impact (2024 → today)
+- **Led the org-wide response to the Axios supply-chain compromise** — coordinated rotation of **400+ secrets across ~20 repositories** and multiple teams, then re-architected credential management onto dedicated, Terraform-managed, least-privilege identities so a leaked secret no longer has org-wide blast radius and rotation is a single `terraform apply`.
+- **Owned the Zeebe benchmark platform migration end-to-end** across four iterations — GKE, Prometheus/Grafana, Harbor, Teleport RBAC, and cross-cloud GCP↔AWS networking — then handed it back to the owning team with docs, smoke tests, and self-service access.
+- **Drove developer-platform cost (FinOps) work** — built per-PR CI cost analysis and a savings roadmap, and turned it into a tracked backlog of concrete reductions.
+- **Set technical direction** — introduced the team's ADR process and authored the cross-team *Reduce Developer Toil* roadmap, planning velocity work for the whole team rather than just myself.
+- **Force-multiplied through AI-assisted engineering** — authored and shared reusable Copilot/Claude *skills* and agentic workflows adopted across the team, and helped drive the organization's AI-first tooling direction.
+- **Modernized the platform with zero downtime** — org-wide Kubernetes upgrades, node-pool migrations, shared cluster operators, and an ingress migration, all without disrupting the teams on top.
 
 ### 📄 [Full Resume →](RESUME.md)
 
@@ -42,9 +52,10 @@ Monitoring     Prometheus · Grafana · OpenTelemetry · Elasticsearch · Opense
 Languages      Go · Java · TypeScript · Python · Shell · Rust (early stage)
 Databases      PostgreSQL · MySQL · MongoDB · Neo4j · Redis
 3D/CAD         OpenSCAD · Fusion 360
-Coding Agents  GitHub Copilot · Claude Opus 4.6 (preferred)
+Coding Agents  GitHub Copilot · Claude
 ```
 
 ### 📫 Get in touch
 - 💼 [LinkedIn](https://www.linkedin.com/in/patrickpoetz)
 - 📧 kellervater@gmail.com
+- ▶️ [YouTube](https://www.youtube.com/@kellerlabs)
