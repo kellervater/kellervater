@@ -56,7 +56,7 @@ Designed and built the entire infrastructure platform for automated warehouses r
 
 **Key achievements:**
 - **Authored a reusable Pulumi (Go) Kubernetes library** that abstracted manifest creation into typed, composable functions - consumed as a dependency by a separate Pulumi program encoding the full infrastructure topology.
-- **Invented a "composition file" system** for version-safe deployments: CI automatically generated a manifest of compatible microservice versions, validated it through integration tests, and tagged it for GitOps reconciliation (FluxCD). Eliminated version incompatibility incidents in production.
+- **Designed a declarative "composition" contract** to solve version skew across independently-deployed services and many warehouses: a composition file named the services (product layer), an environment file pinned their concrete versions per environment (dev, stage, prod-warehouse-1, -2, …), and the Pulumi library compiled it into Kubernetes manifests. CI rendered each candidate composition into an ephemeral feature namespace, ran the full e2e suite there, and only a passing composition got tagged — that tag *was* the release (GitOps/FluxCD). Shifted the quality gate left and eliminated version-incompatibility incidents in production.
 - **Built one-click cluster bootstrapping** from bare metal: Ansible + Terraform provisioning Proxmox VMs, Rancher deploying HA Kubernetes clusters, WireGuard for multi-site networking - scalable to an arbitrary number of warehouses.
 - Supported developers and software architects in creating architectural proof-of-concepts. Established company-wide standards, self-service tools, and policies.
 
@@ -77,6 +77,8 @@ Designed and maintained GitOps CI/CD workflows on Azure Kubernetes. Mentored fel
 
 Architected cloud infrastructure on AWS. Containerized all microservice workloads and introduced Blue/Green deployment for zero-downtime production releases. Built fully automated CI/CD pipelines enabling one-click production deployment. Monitored production systems and increased reliability.
 
+- **Made a build-time-coupled React app environment-agnostic** by serving runtime config from `/.well-known` endpoints (per-environment URLs and public env vars) — a small change in the app's JS to read its config at runtime, plus an ingress route, replaced fragile per-environment frontend rebuilds.
+
 ### BearingPoint - System Engineer
 **October 2012 – October 2017** (5 years 1 month) · Graz, Austria
 
@@ -86,6 +88,8 @@ Started as a **Java programmer** (Java, Oracle, MSSQL, JSF) for 2 years. Transit
 **October 2009 – September 2012** (3 years) · Vienna, Austria · Frankfurt, Germany · Manila, Philippines
 
 Junior programmer in the financial sector: COBOL, JCL, DB2, then **Java, GWT, PostgreSQL, Swing**. Offshore exchange program in the Philippines. Next project: public services sector with **Java, Spring, and SOAP web services** as **Technical Lead and Product Owner** of a subproject.
+
+- **Built a high-throughput DB2→PostgreSQL data pipeline** for the migration engine of a major bank merger (Commerzbank/Dresdner): a Java 7 + JDBC job that streamed millions of error records out of IBM DB2, reshaped them into our data model, and loaded them into PostgreSQL. Hit the throughput target by combining JDBC data-streaming with a 2-byte→1-byte encoding reduction and SQL **window functions** for the required grouping — pulling ~14M datasets in ~10 minutes (target: 10M / 30 min). Ran through the merger cutover weekend.
 
 ---
 
@@ -101,7 +105,7 @@ Junior programmer in the financial sector: COBOL, JCL, DB2, then **Java, GWT, Po
 | **CI/CD** | GitHub Actions (ARC self-hosted runners), Jenkins, Azure DevOps, Gitlab |
 | **Security** | Teleport (zero-trust access), Vault, SOPS, WireGuard, Okta SSO, Yubikey (GPG, FIDO, etc) |
 | **Observability** | Prometheus, Grafana, Alertmanager, Elastic Stack, OpenCost |
-| **Databases** | PostgreSQL, MySQL, MongoDB, Neo4j, Redis, Oracle, MSSQL |
+| **Databases** | PostgreSQL, MySQL, MongoDB, Neo4j, Redis, Oracle, DB2, MSSQL |
 | **Registries** | Harbor, GAR, DockerHub |
 | **Coding Agents** | GitHub Copilot (preferred model: Claude Opus 4.6) — highly proficient; actively tracks new model developments to maintain peak efficiency |
 
