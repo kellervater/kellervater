@@ -21,9 +21,9 @@ install commands) and explicitly noted in Notes.
 2. **Install** (built from source via Go, since no distro package existed):
    ```bash
    # v0.9.0
-   GOBIN="$HOME/.local/bin" go install github.com/foxboron/ssh-tpm-agent/cmd/ssh-tpm-agent@e3fbb22cb56d8aa4fd66f777f3274ea1d39ce1ad
+   GOBIN="$HOME/.local/bin" go install github.com/foxboron/ssh-tpm-agent/cmd/ssh-tpm-agent@3854ff20dfa9cd174f7950ac2062ad3baa6d7b35
    # v0.9.0
-   GOBIN="$HOME/.local/bin" go install github.com/foxboron/ssh-tpm-agent/cmd/ssh-tpm-keygen@e3fbb22cb56d8aa4fd66f777f3274ea1d39ce1ad
+   GOBIN="$HOME/.local/bin" go install github.com/foxboron/ssh-tpm-agent/cmd/ssh-tpm-keygen@3854ff20dfa9cd174f7950ac2062ad3baa6d7b35
    ```
 
 3. **Generate a sealed key** (TPM 2.0 only supports RSA/ECDSA - no Ed25519):
