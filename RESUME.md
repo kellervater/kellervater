@@ -9,7 +9,7 @@ Pöllau, Styria, Austria (Remote - EU)
 
 ## Summary
 
-Platform engineer with 16 years of experience, starting as a Java developer in the financial and public-services sectors and moving into infrastructure architecture and developer-platform ownership. I build software that makes other engineers more productive, and I increasingly own the technical direction behind it: developer platforms, CI/CD, Kubernetes, and cross-team platform services for 100+ engineers across 10+ teams. Most of my work has leverage well beyond my own tickets. I write reusable frameworks, design self-service abstractions, lead cross-team migrations and security incidents, and set up practices (ADRs, roadmaps, scoped-access models) that other teams adopt. I think like a programmer when solving infrastructure problems and ship end-to-end with minimal oversight. Over the past year I've spent a lot of time on AI coding agents, writing reusable agent skills and agentic workflows for the team while keeping up with new models and getting real day-to-day efficiency out of them by continuously building out my personal OS. I work best async and push for an async-first workstyle: group chats over DMs, and respect for each other's time, where "let's hop on a quick chat" is reserved for incidents and for building connective tissue.
+Platform engineer with 16+ years of experience, starting as a Java developer in the financial and public-services sectors and moving into infrastructure architecture and developer-platform ownership. I build software that makes other engineers more productive, and I increasingly own the technical direction behind it: developer platforms, CI/CD, Kubernetes, and cross-team platform services for 100+ engineers across 10+ teams. Most of my work has leverage well beyond my own tickets. I write reusable frameworks, design self-service abstractions, lead cross-team migrations and security incidents, and set up practices (ADRs, roadmaps, scoped-access models) that other teams adopt. I think like a programmer when solving infrastructure problems and ship end-to-end with minimal oversight. Over the past year I've spent a lot of time on AI coding agents, writing reusable agent skills and agentic workflows for the team while keeping up with new models and getting real day-to-day efficiency out of them by continuously building out my personal OS. I work best async and push for an async-first workstyle: group chats over DMs, and respect for each other's time, where "let's hop on a quick chat" is reserved for incidents and for building connective tissue.
 
 ---
 
@@ -27,7 +27,7 @@ Own Camunda's developer platform serving 100+ engineers across 10+ product teams
 - **Co-shaped team-level technical direction beyond my own projects**: contributed to the team's multi-year technical vision and prototyped an AI-driven "medic" and "maintenance DRI" concept to automate incident triage and maintenance overhead.
 
 **Security & reliability**
-- **Led the org-wide response to the Axios supply-chain (RAT) compromise**: coordinated rotation of 400+ secrets across ~20 repositories and multiple teams (~33 PRs), built a reusable Aurora password-rotation mechanism, and re-architected Nexus/Artifactory/Harbor credentials away from shared LDAP identities onto dedicated, Terraform-managed, scoped service accounts. This cut blast radius and reduced rotation to a `terraform apply` or even got rid of long-lived credentials all together (by switching parts to OIDC where viable).
+- **Led the org-wide response to the Axios supply-chain (RAT) compromise**: coordinated rotation of 400+ secrets across ~20 repositories and multiple teams (~33 PRs), built multiple reusable password-rotation mechanisms (lifecycle owned by TF), and re-architected Nexus/Artifactory/Harbor credentials away from shared LDAP identities onto dedicated, Terraform-managed, scoped service accounts. This cut blast radius and reduced rotation to a `terraform apply` or even got rid of long-lived credentials all together (by switching parts to OIDC where viable).
 - **Drove least-privilege access** across the platform: replaced broad Vault policies with per-team scoped policies via a staged, multi-wave rollout, backed by a custom transitive secret scanner to catch usage hidden in third-party actions and reusable workflows.
 - **Led a security audit of all GitHub Apps** across 4 GitHub organizations: built custom API tooling to extract permissions and activity data, removed unused apps, and downscoped overly broad installations.
 - **Designed self-hosted runner resilience**: after an AWS spot-instance exhaustion incident, implemented a cluster-autoscaler priority-expander spot→on-demand fallback that eliminated CI outages.
@@ -108,7 +108,7 @@ Junior programmer in the financial sector: COBOL, JCL, DB2, then **Java, GWT, Po
 | **Observability** | Prometheus, Grafana, Alertmanager, Elastic Stack, OpenCost |
 | **Databases** | PostgreSQL, MySQL, MongoDB, Neo4j, Redis, Oracle, DB2, MSSQL |
 | **Registries** | Harbor, GAR, DockerHub |
-| **Coding Agents** | GitHub Copilot (preferred model: Claude Opus 4.6); highly proficient and actively tracking new model developments to stay efficient |
+| **Coding Agents** | Claude, GitHub Copilot, Gemini; highly proficient and actively tracking new model developments to stay efficient |
 
 ---
 
