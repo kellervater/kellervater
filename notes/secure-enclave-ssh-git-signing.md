@@ -66,10 +66,19 @@ git config --global gpg.ssh.allowedSignersFile ~/.ssh/allowed_signers
 echo "<git-email> $(cat ~/.ssh/id_ecdsa_github.pub)" > ~/.ssh/allowed_signers
 ```
 
-7. **Register the pubkey on GitHub** - as both Authentication key and
+7. **Set the commit identity** on a fresh machine - `<git-email>` must be an
+   email verified on the GitHub account, otherwise commits land as
+   "Unverified" (see Notes):
+
+```bash
+git config --global user.name "<name>"
+git config --global user.email "<git-email>"
+```
+
+8. **Register the pubkey on GitHub** - as both Authentication key and
    Signing key → github.com/settings/keys
 
-8. **Verify**: `ssh -T git@github.com` greets you; `git commit -S` shows
+9. **Verify**: `ssh -T git@github.com` greets you; `git commit -S` shows
    "Verified" on GitHub.
 
 ## Notes
@@ -85,6 +94,16 @@ echo "<git-email> $(cat ~/.ssh/id_ecdsa_github.pub)" > ~/.ssh/allowed_signers
   it queries whatever the default agent is (macOS's built-in one, which
   doesn't know about Secretive's keys) and signing fails silently until
   you dig into it.
+
+- **"Unverified" on GitHub despite a good local signature**: `git log
+  --show-signature` only checks the signature against
+  `~/.ssh/allowed_signers`, GitHub additionally requires the commit's author
+  email to be a verified email on the account. With no `user.email` set, git
+  silently derives one from username and hostname
+  (`<user>@<host>.local`), which is unverifiable, so every commit shows
+  "Unverified" while verifying fine locally. `commit.gpgsign` is also off by
+  default, so commits go unsigned unless `-S` is passed:
+  `git config --global commit.gpgsign true` to sign always.
 
 - **Notify vs. TPM security**: non-exportability matches (key never leaves
   hardware either way). UX-wise also matches - the TPM's passphrase is
