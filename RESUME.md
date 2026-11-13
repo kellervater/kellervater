@@ -16,41 +16,35 @@ Platform engineer with 16+ years of experience, starting as a Java developer in 
 ## Experience
 
 ### Camunda - Senior Software Engineer, Infrastructure
-**June 2024 – Present** · Remote
+**June 2024 - Present** · Remote
 
-Own Camunda's developer platform serving 100+ engineers across 10+ product teams: CI/CD infrastructure (GitHub Actions self-hosted runners on EKS, label-driven preview environments), Kubernetes clusters (GKE + EKS), container registries (Harbor), dependency management (Renovate), monitoring (Prometheus/Grafana), secret management (Vault), and cross-team platform services. I increasingly act as a technical-direction setter across the engineering organization. The scope has grown steadily over my tenure, from onboarding individual product teams onto the platform, to owning org-wide operations, to leading multi-quarter cross-team initiatives and org-wide incident response.
+Run Camunda's developer platform for 100+ engineers across 10+ product teams together with the Infra team: self-hosted GitHub Actions runners on GKE and EKS, preview environments, Kubernetes, container registries (Harbor), dependency automation (Renovate), observability (Prometheus/Grafana) and secrets management (Vault). My focus is secure software delivery. Scope grew from onboarding single teams, to org-wide platform operations, to owning multi-quarter cross-team programs and leading the Infra side of security incidents.
 
-**Technical leadership & direction**
-- **DRI for the Zeebe Benchmark Platform Migration**: a multi-quarter, multi-iteration program that migrated an entire team's benchmark infrastructure (GKE cluster, Prometheus/Grafana monitoring, Harbor registry, Teleport RBAC, AWS ECS workloads, cross-cloud GCP↔AWS networking) from a team-owned environment to the centrally managed Infra platform, then handed it back with documentation, smoke tests, and self-service access. Delivered with cross-functional coordination; the final ECS-monitoring iteration shipped against a 6-day deadline in 4.
-- **Introduced the team's ADR process** to make architectural decisions explicit, reviewable, and durable across the team.
-- **Authored the cross-team "Reduce Developer Toil" roadmap**: several weeks of planning that turned into a structured epic and sub-initiatives (PR-lifetime leases, coding-agent access, scoped local access, AI-assisted ask-infra/maintenance), setting developer-velocity direction for the whole team rather than just my own work.
-- **Co-shaped team-level technical direction beyond my own projects**: contributed to the team's multi-year technical vision and prototyped an AI-driven "medic" and "maintenance DRI" concept to automate incident triage and maintenance overhead.
+**🔐 Supply-chain and platform security**
+- **Keyless CI identities, org-wide:** moved CI secrets access for 100+ repositories from one broad credential to team-scoped, least-privilege policies in staged waves, backed by a transitive usage scanner that finds secrets consumed inside third-party actions and reusable workflows. Now leading the move to keyless OIDC authentication (50+ repositories in the first weeks, driven by inventory and transform tooling I built), and published [`vault-wrapped-secrets`](https://github.com/camunda/infra-global-github-actions/tree/main/vault-wrapped-secrets) so jobs, including AI agent jobs, receive secrets without holding credentials.
+- **Incident lead on the Infra side during software supply-chain attacks:** built an audit-log-driven exposure analyzer and a prioritised rotation playbook, coordinated owners across teams, and rotated every critical credential within a week. Replaced shared registry credentials with scoped, Terraform-managed and ephemeral ones, so rotation is now a `terraform apply`.
+- **Turned incidents into structural hardening:** SHA-pinned third-party actions with enforced workflow linting, digest-pinned container images, and secrets-manager backups moved outside their own trust domain (dual-key encryption, freshness alerting, tested restore drills). I reworked the backup design after a security review challenged its premise.
+- **GitHub App governance:** ran the first audit of GitHub App installations across several organisations with an owner per app, and am now designing a tiered GitHub App standard that turns most access requests into a single reviewed PR.
+- Introduced tokenless package publishing (OIDC Trusted Publishing), moved artifact-registry auth to identity tokens and added infrastructure-as-code vulnerability scanning to CI early in my tenure.
 
-**Security & reliability**
-- **Led the org-wide response to the Axios supply-chain (RAT) compromise**: coordinated rotation of 400+ secrets across ~20 repositories and multiple teams (~33 PRs), built multiple reusable password-rotation mechanisms (lifecycle owned by TF), and re-architected Nexus/Artifactory/Harbor credentials away from shared LDAP identities onto dedicated, Terraform-managed, scoped service accounts. This cut blast radius and reduced rotation to a `terraform apply` or even got rid of long-lived credentials all together (by switching parts to OIDC where viable).
-- **Drove least-privilege access** across the platform: replaced broad Vault policies with per-team scoped policies via a staged, multi-wave rollout, backed by a custom transitive secret scanner to catch usage hidden in third-party actions and reusable workflows.
-- **Led a security audit of all GitHub Apps** across 4 GitHub organizations: built custom API tooling to extract permissions and activity data, removed unused apps, and downscoped overly broad installations.
-- **Designed self-hosted runner resilience**: after an AWS spot-instance exhaustion incident, implemented a cluster-autoscaler priority-expander spot→on-demand fallback that eliminated CI outages.
-- **Owned org-wide Kubernetes upgrades and modernization** (GKE + EKS, dev/stage/prod) with zero downtime. I took this on within months of joining and have run it across versions since, including graceful node-pool migrations, rollout of shared cluster operators (ECK/CNPG/Keycloak), and an ingress migration.
-- **Hardened the software supply chain**: migrated artifact-registry authentication to short-lived identity tokens and added container image/manifest vulnerability scanning to CI early in my tenure.
+**⚡ CI/CD and developer productivity**
+- **Started and run the Reduce Developer Toil program:** shipped PR-lifetime leases for shared dev infrastructure (decision record, CLI, enforcement in apply targets and CI, a lease board), a component-test framework on AWS and GCP dev clusters that gates Renovate automerge for a dozen core platform components, a skill that generates component tests from real usage patterns, and an agent that retires upstream workarounds once fixes land (16 repositories). Agent access to dev infrastructure for AI-driven maintenance is the stage in progress.
+- **Incident commander for CI platform incidents**, following every mitigation with a structural fix: for example pruning non-shipped dependency scopes cut a license-scan job from about 30 to under 10 minutes on main and all stable branches, and root-causing intermittent CI failures to a DNS negative-caching race came with a validating test suite.
+- **Self-hosted runner resilience:** spot-to-on-demand fallback with a cluster-autoscaler priority expander, routine component-tested runner-controller upgrades and GitOps self-healing for CI apps.
+- **Preview environments and ingress:** restored the monorepo's preview environments through a major Helm-chart upgrade with a runbook, delivered my chapter of the team's ingress-nginx to Traefik and Gateway API migration across the CI clusters, and shipped a Helm v4 rendering upgrade with no stage or prod outages.
+- **Reusable CI building blocks:** automated releases for 25 infrastructure repositories (two reusable actions plus conventional-commit enforcement), preview-environment feedback actions in 7 product repositories, self-service namespace-scoped Kubernetes access for product teams and their CI bots, and shared, smoke-tested Kubernetes operators so teams test operator-managed deployments without their own infrastructure.
+- **CI cost model:** built a cost-per-PR model for the self-hosted CI fleet, cross-validated against the CI provider's API, and turned it into a ranked savings plan with owned follow-ups and a reusable analysis skill.
 
-**Developer productivity & leverage**
-- **Became the Renovate platform owner** for engineering: self-hosted Renovate for the monorepo, designed sensitive-dependency patterns, and prevented production outages from faulty transitive dependencies.
-- **Built reusable CI frameworks**: a smoke-test system for automated Kustomize component upgrades, an AI Commit Guard GitHub Action, ChatOps automation for team workflow management, and an AI-powered deliverables-summary system that automatically analyses issue activity into validated, categorised output summaries.
-- **Recovered the monorepo's preview-environment system** after breaking upstream changes: drove a major Helm-chart upgrade across ingress, auth, secrets, Helm values and the CI deploy workflow, and authored the upgrade runbook that de-risks future upgrades for the team.
-- **Authored and shared reusable AI agent "skills"** (registry, Vault, cost-analysis, node-migration, dev-testing, and more) and agentic workflows adopted across the team; an active driver of the organization's AI-first tooling direction.
-
-**Cost / FinOps**
-- **FinOps DRI** for the developer platform: managed artifact-storage thresholds, ran usage-trajectory and cross-cloud data-transfer cost analyses, built per-PR CI cost reporting with a savings leaderboard, and turned findings into a tracked reduction backlog (including a Nexus→GAR caching strategy to retire an artificial vendor quota).
-
-**Enablement, mentoring & hiring**
-- **First point of contact for 10+ teams** on platform topics (access, secrets, registries, CI, networking), for example onboarding product teams onto self-hosted CI runners, a secure vendor-image proxy/cache for the self-managed product team, registry quota and retention fixes for the Console team, cross-cluster Kubernetes access for the monorepo DevOps team, and new datastore-version support. I turn recurring requests into self-service documentation and tooling.
-- **Held rotating DRI (directly-responsible-individual) roles** across the platform: medic and monorepo-CI medic shifts biased toward root-cause fixes over one-off silences, plus team-newsletter rotations.
-- **Mentoring engineers** on infrastructure best practices including async workflows, security, containerization, and Kubernetes operations.
-- **Leading and participating in hiring interviews** for new domain colleagues, including reviewing take-home tests, conducting whiteboard sessions, and facilitating peer interviews.
+**🧭 Direction and leverage**
+- **Led a multi-quarter, cross-team platform migration:** moved a product team's performance-benchmark environment onto dedicated, isolated clusters (network plan, Terraform, GitOps, workload identity, private registry networking, alerting) and handed it back as self-service. The owning team has since contributed 40+ changes directly.
+- **Introduced decision records** for our infrastructure codebase; they now back node-pool migrations, shared operators, dev leases, backup design and GitOps self-healing. Authored the roadmaps and epics the team executes on and contributed to the team's multi-year technical vision.
+- **AI as a team force multiplier:** agent skills that encode operational runbooks (registry setup, secrets onboarding, cost analysis, disruption-free node-pool migration, component-test creation), agent-authored PRs dispatched straight from request threads, and generated stand-ups and a newsletter skill that became the team's handover process.
+- **Leverage through others:** delegated cost initiatives, the FinOps and newsletter roles with written handovers and reusable skills, and reviewed them to closure. Started customer discovery with engineers across R&D to steer what the CI/CD platform solves next.
+- **First point of contact for 10+ teams** on platform topics, with 300+ support requests answered, turning recurring ones into self-service docs, skills and tooling. Rotating DRI for medic, maintenance, FinOps and security.
+- **Mentoring and hiring:** onboarding buddy and mentor for new engineers, whiteboard and peer interviews (including as lead), and a grading heuristic for AI-generated take-home submissions.
 
 ### advastore SE - Platform Engineer
-**April 2023 – May 2024** (1 year 2 months) · Remote
+**April 2023 - May 2024** (1 year 2 months) · Remote
 
 Designed and built the entire infrastructure platform for automated warehouses running MQTT-driven microservices on on-prem Kubernetes, from bare metal (on top of Proxmox) to production, fully Infrastructure as Code (Ansible, Terraform with an Azure backend, RKE2, and Pulumi in Go) with zero manual steps.
 
@@ -63,29 +57,29 @@ Designed and built the entire infrastructure platform for automated warehouses r
 **Technologies:** Pulumi (Go), Terraform, Ansible, Kubernetes, FluxCD, WireGuard, Proxmox, Rancher, .NET, MySQL, MongoDB, Azure, Grafana Stack, Elastic Stack.
 
 ### VOO Aviation Service GmbH - DevOps Architect
-**January 2022 – April 2023** (1 year 4 months) · Hybrid (Graz), Austria
+**January 2022 - April 2023** (1 year 4 months) · Hybrid (Graz), Austria
 
 Designed and built a fully cloud-agnostic Kubernetes infrastructure on top of bare-metal hardware and cloud VMs. Owned the full stack: Netmaker/WireGuard for multi-cloud networking, Rancher Kubernetes Engine, Ansible provisioning, FluxCD for GitOps, SOPS for secrets, Stackgres (Postgres), MongoDB, Neo4J, OpenEBS storage, and Prometheus/Grafana observability. Designed and maintained the entire CI/CD system and pipelines (Gitlab) which also ran on-prem. Created disaster recovery plans and regular drills on prod-like environments.
 
 ### Reactive Reality - Site Reliability Engineer
-**January 2021 – December 2021** (1 year) · Hybrid (Graz), Austria
+**January 2021 - December 2021** (1 year) · Hybrid (Graz), Austria
 
 Designed and maintained GitOps CI/CD workflows on Azure Kubernetes. Mentored fellow engineers and ran workshops on containerization, Kubernetes, Helm, and operators. Worked remotely with a globally distributed team.
 
 ### pink robin gmbh (wastebox.biz) - DevOps Engineer
-**November 2017 – January 2021** (3 years 3 months) · Graz, Austria
+**November 2017 - January 2021** (3 years 3 months) · Graz, Austria
 
 Architected cloud infrastructure on AWS. Containerized all microservice workloads and introduced Blue/Green deployment for zero-downtime production releases. Built fully automated CI/CD pipelines enabling one-click production deployment. Monitored production systems and increased reliability.
 
 - **Made a build-time-coupled React app environment-agnostic** by serving runtime config from `/.well-known` endpoints (per-environment URLs and public env vars). A small change in the app's JS to read its config at runtime, plus an ingress route, replaced fragile per-environment frontend rebuilds.
 
 ### BearingPoint - System Engineer
-**October 2012 – October 2017** (5 years 1 month) · Graz, Austria
+**October 2012 - October 2017** (5 years 1 month) · Graz, Austria
 
 Started as a **Java programmer** (Java, Oracle, MSSQL, JSF) for 2 years. Transitioned to a project where AngularJS was the leading technology, where I introduced UI E2E tests using the Protractor framework. Then moved into DevOps: built a fully automated release pipeline using JobDSL for Jenkins and automated feature branch creation across interdependent repositories.
 
 ### Accenture - Software Engineer
-**October 2009 – September 2012** (3 years) · Vienna, Austria · Frankfurt, Germany · Manila, Philippines
+**October 2009 - September 2012** (3 years) · Vienna, Austria · Frankfurt, Germany · Manila, Philippines
 
 Junior programmer in the financial sector: COBOL, JCL, DB2, then **Java, GWT, PostgreSQL, Swing**. Offshore exchange program in the Philippines. Next project: public services sector with **Java, Spring, and SOAP web services** as **Technical Lead and Product Owner** of a subproject.
 
@@ -125,7 +119,7 @@ A fully modular 3D-printable rack-building system. Open-spec parametric design (
 
 ## Education
 
-**HTBLuVA Pinkafeld** - Ing., IT & Organisation (2004–2009)
+**HTBLuVA Pinkafeld** - Ing., IT & Organisation (2004-2009)
 
 ---
 
